@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>data-editor</title>
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,900" rel="stylesheet" type="text/css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/bundle.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="/assets/style.css" media="screen" charset="utf-8">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="page-header">
+        <button id="new-row" class="small">new row</button>
+        <button id="new-column" class="small">new column</button>
+        <a href="/csv" target="_blank" id="export-csv" class="button small">export csv</a>
+      </div>
+      <div class="grid-wrapper">
+        <div id="grid-header"></div>
+        <div id="grid">
+          <i class="loader fa fa-circle-o-notch fa-spin"></i>
+        </div>
+      </div>
+    </div>
+    <script src="/assets/bundle.js" charset="utf-8"></script>
+  </body>
+</html>

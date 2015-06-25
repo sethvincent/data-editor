@@ -1,0 +1,179 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #efefef;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+}
+
+a {
+  color: #2A8782;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #000;
+}
+
+a:active,
+a:focus {
+  color: #000;
+}
+
+.wrapper {
+  margin: 0px 20px;
+}
+
+.page-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #efefef;
+  padding-top: 10px;
+}
+
+.grid-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  width: 100%;
+  margin-top: 60px;
+}
+
+#grid {
+  height: 600px;
+  position: relative;
+}
+
+#grid-header {
+}
+
+.data-grid-list {
+  margin: 0px auto;
+  padding: 0px;
+  height: 100%;
+  overflow-x: visible;
+  overflow-y: scroll;
+  position: absolute;
+}
+
+.data-grid-row {
+  list-style-type: none;
+  height: 30px;
+}
+
+.data-grid-properties {
+  margin: 0px;
+  padding: 0px;
+}
+
+.data-grid-property {
+  font-size: 15px;
+  border-bottom: 0px;
+  display: inline;
+  white-space: nowrap;
+}
+
+.grid-header-list {
+  margin-top: 20px;
+  white-space: nowrap;
+}
+
+.grid-header-item {
+  width: 150px;
+  padding: 0px 3px 4px;
+  display: inline-block;
+}
+
+textarea.data-grid-property-value {
+  height: 30px;
+  width: 150px;
+  min-height: 30px !important;
+  max-height: 30px !important;
+  overflow: hidden !important;  
+  border: 1px solid #efefea;
+  border-bottom: 0px;
+  border-right: 0px;
+  resize: none;
+  padding: 0px 8px;
+  font-size: 13px;
+  line-height: 30px;
+}
+
+.grid-header ul {
+  margin: 10px 0px 10px 0px;
+  padding: 0px;
+  border-bottom: 1px solid #cdcdca;
+}
+
+.grid-header li {
+  height: 30px;
+  width: 150px;
+  max-height: 30px !important;
+  overflow: hidden !important;  
+  border: 1px solid #efefea;
+  border-bottom: 0px;
+  border-right: 0px;
+  resize: none;
+  display: inline;
+  text-wrap: none;
+}
+
+.expand-editor {
+  margin-left: -24px;
+  background-color: #fff;
+  padding: 4px 5px 2px 4px;
+  display: inline-block;
+  margin-top: 5px;
+  vertical-align: top;
+  visibility: hidden;
+}
+
+.data-grid-property:hover > .expand-editor {
+  visibility: visible;
+}
+
+.popupjs-background {
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+}
+
+.popupjs-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
+.popupjs-close {
+  border: 1px solid #e9e9e9;
+  background-color: #efefef;
+  position: relative;
+  display: block;
+  float: right;
+  cursor: pointer;
+}
+
+.popupjs-content,
+.popupjs-actions {
+  clear: both;
+  padding: 10px 0px;
+  margin: 0px auto;
+  width: 70%;
+}
+
+.popupjs-content h2 {
+  font-weight: 500;
+}
+
+.popupjs-content .editor textarea {
+  width: 100%;
+  height: 60%;
+  border: 1px solid #e9e9e9;
+  resize: none;
+}
