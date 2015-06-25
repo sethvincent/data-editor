@@ -16,7 +16,7 @@ var csvParser = require('csv-parser')
 var formatData = require('format-data')
 
 var csvName = process.argv[2]
-var csvDir = path.join(__dirname, csvName)
+var csvDir = path.join(process.cwd(), csvName)
 
 var tmpDir = require('osenv').tmpdir()
 var rootDir = path.join(tmpDir, '.data-editor')
