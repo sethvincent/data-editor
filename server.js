@@ -17,6 +17,7 @@ var formatData = require('format-data')
 
 var csvName = process.argv[2]
 var csvDir = path.join(process.cwd(), csvName)
+var port = process.argv[3] || 4455
 
 var tmpDir = require('osenv').tmpdir()
 var rootDir = path.join(tmpDir, '.data-editor')
@@ -117,7 +118,7 @@ fs.createReadStream(csvDir)
       next()
     })
   }, function () {
-    server.listen(4455, function () {
-      console.log('data-editor server listening on http://localhost:4455')
+    server.listen(port, function () {
+      console.log('data-editor server listening on http://localhost:' + port)
     })
   }))

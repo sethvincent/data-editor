@@ -6,7 +6,7 @@ module.exports = APIClient
 function APIClient (opts) {
   if (!(this instanceof APIClient)) return new APIClient(opts)
   opts = opts || {}
-  this.host = opts.host || 'http://127.0.0.1:4455'
+  this.host = opts.host || window.location.href
 }
 
 APIClient.prototype.put = function (key, row, cb) {
@@ -77,7 +77,7 @@ APIClient.prototype.request = function (method, path, params, cb) {
 }
 
 APIClient.prototype.fullUrl = function fullUrl (path, params) {
-  var url = this.host + '/' + path
+  var url = this.host + path
   if (params) url += '?' + params
   return url
 }
