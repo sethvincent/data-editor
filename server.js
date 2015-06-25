@@ -101,8 +101,6 @@ router.on('/csv', function (req, res, opts) {
     .pipe(res)
 })
 
-var mount = st({ path: __dirname + '/assets', url: '/assets' })
-
 var server = http.createServer(cors(function (req, res) {
   if (router.match(req, res)) return
   if (req.url === '/assets/bundle.js') return fs.createReadStream(path.join(__dirname, 'assets', 'bundle.js')).pipe(response()).pipe(res)
