@@ -14,7 +14,6 @@ var from = require('from2-array')
 var through = require('through2')
 var csvParser = require('csv-parser')
 var formatData = require('format-data')
-var st = require('st')
 
 var csvName = process.argv[2]
 var csvDir = path.join(__dirname, csvName)
@@ -105,8 +104,10 @@ router.on('/csv', function (req, res, opts) {
 var mount = st({ path: __dirname + '/assets', url: '/assets' })
 
 var server = http.createServer(cors(function (req, res) {
-  if (mount(req, res)) return
   if (router.match(req, res)) return
+  if (req.url === '/assets/bundle.js') return fs.createReadStream(path.join(__dirname, 'assets', 'bundle.js')).pipe(response()).pipe(res)
+  if (req.url === '/assets/bundle.css') return fs.createReadStream(path.join(__dirname, 'assets', 'bundle.css')).pipe(response()).pipe(res)
+  if (req.url === '/assets/style.css') return fs.createReadStream(path.join(__dirname, 'assets', 'style.css')).pipe(response()).pipe(res)
   fs.createReadStream(path.join(__dirname, 'index.html')).pipe(res)
 }))
 
