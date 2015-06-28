@@ -87,17 +87,15 @@ var through = require('through2')
 var debounce = require('lodash.debounce')
 var on = require('dom-event')
 var cuid = require('cuid')
-var createElement = require('base-element')
 var extend = require('extend')
 var popup = require('popupjs')
-
 var client = require('./api-client')()
 
-var gridEl = document.getElementById('grid')
 var dataGrid = require('data-grid')({
-  appendTo: gridEl,
+  appendTo: document.getElementById('grid'),
   height: 600
 })
+
 var expandEditor = require('./lib/editor')
 var gridHeader = require('./lib/grid-header')(document.getElementById('grid-header'))
 var headers = []
@@ -182,7 +180,7 @@ on(document.getElementById('new-column'), 'click', function (e) {
     console.log(err, res)
   })
 })
-},{"./api-client":1,"./lib/editor":3,"./lib/grid-header":4,"base-element":5,"cuid":80,"data-grid":81,"dom-event":149,"extend":150,"lodash.debounce":152,"popupjs":154,"through2":186}],3:[function(require,module,exports){
+},{"./api-client":1,"./lib/editor":3,"./lib/grid-header":4,"cuid":80,"data-grid":81,"dom-event":149,"extend":150,"lodash.debounce":152,"popupjs":154,"through2":186}],3:[function(require,module,exports){
 var element = require('base-element')
 var inherits = require('inherits')
 

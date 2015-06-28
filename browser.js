@@ -2,17 +2,15 @@ var through = require('through2')
 var debounce = require('lodash.debounce')
 var on = require('dom-event')
 var cuid = require('cuid')
-var createElement = require('base-element')
 var extend = require('extend')
 var popup = require('popupjs')
-
 var client = require('./api-client')()
 
-var gridEl = document.getElementById('grid')
 var dataGrid = require('data-grid')({
-  appendTo: gridEl,
+  appendTo: document.getElementById('grid'),
   height: 600
 })
+
 var expandEditor = require('./lib/editor')
 var gridHeader = require('./lib/grid-header')(document.getElementById('grid-header'))
 var headers = []
